@@ -6,4 +6,8 @@ tis code uses mediapipe to trigger the gun to shoot.
 
 there is also an up down button.
 
+flash ```hub.py``` to the technic powered up hub
+
+control the thing from the py file in the root folder
+
 ilysm
