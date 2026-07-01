@@ -21,7 +21,6 @@ RIGHT_EYE = [33,  7,   163, 144, 145, 153, 154, 155, 133, 173, 157, 158, 159, 16
 EAR_THRESHOLD = 0.20
 CLOSED_FRAMES = 10
 
-# ── Button layout (x1, y1, x2, y2) ───────────────────────
 BTN_UP   = (20, 160, 140, 200)
 BTN_DOWN = (20, 210, 140, 250)
 
@@ -29,10 +28,8 @@ def ear(landmarks, eye_pts, w, h):
     """EAR using 16-point full eye contour — more accurate than 6-point version."""
     pts = np.array([(landmarks[i].x * w, landmarks[i].y * h) for i in eye_pts])
 
-    # horizontal distance (leftmost to rightmost)
     hor = np.linalg.norm(pts[0] - pts[8])
 
-    # 6 vertical distances sampled across the eye
     v1 = np.linalg.norm(pts[1]  - pts[15])
     v2 = np.linalg.norm(pts[2]  - pts[14])
     v3 = np.linalg.norm(pts[3]  - pts[13])
